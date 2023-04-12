@@ -1,7 +1,7 @@
 set -e
 
 pushd "genJSONSchema/test"
-node index.mjs
+ts-node index.ts
 popd #"genJSONSchema/test"
 
 pushd "cppGen"

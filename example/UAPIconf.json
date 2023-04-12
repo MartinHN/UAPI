@@ -1,0 +1,6 @@
+{
+    "genJSON": {
+        "baseFile": "../genJSONSchema/test/simple/RootAPI.h"
+    },
+    "outFolder": "gen/"
+}
