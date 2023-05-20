@@ -12,7 +12,7 @@ const confFilePath = process.argv[2]
 function toAbs(relP: string) {
     const confDir = path.dirname(confFilePath);
     const res = path.resolve(confDir, relP);
-    console.log("was", relP, "is", res)
+    // console.log("was", relP, "is", res)
     return res;
 }
 
@@ -23,8 +23,11 @@ function mkDirIfNeeded(d: string) {
 
 const conf = JSON.parse(fs.readFileSync(confFilePath).toString())
 const outFolder = toAbs(conf.outFolder)
+const outJsFolder = toAbs(conf.outJsFolder)
 console.log(outFolder)
 mkDirIfNeeded(outFolder)
+if (outJsFolder)
+    mkDirIfNeeded(outJsFolder)
 
 import { genXml } from "./genJSONSchema/genXml"
 import { convertToJSON } from "./genJSONSchema/parseXml"
@@ -43,4 +46,4 @@ if (conf.genJSON) {
 
 const cppOutFolder = outFolder + "/cpp";
 mkDirIfNeeded(cppOutFolder)
-genAll(jsonFile, cppOutFolder)
+genAll(jsonFile, cppOutFolder, outJsFolder)

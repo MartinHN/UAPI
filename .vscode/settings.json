@@ -1,6 +1,7 @@
 {
     "files.associations": {
-        "*.ejs": "html",
+        "*.ecpp": "c",
+        "*.ejs": "c",
         "iosfwd": "cpp",
         "__bit_reference": "cpp",
         "__bits": "cpp",
@@ -81,8 +82,10 @@
     "html.format.templating": true,
     "emmet.includeLanguages": {
         "ejs": "html",
+        "ecpp": "cpp"
     },
-    "[html]": {
-        "editor.defaultFormatter": "j69.ejs-beautify"
-    },
+    "[c]": {
+        "editor.formatOnSave": false,
+        // "editor.defaultFormatter": "cl"
+    }
 }
