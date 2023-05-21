@@ -1,6 +1,6 @@
 [submodule "cppGen"]
-	path = cppGen
-	url = ./cppGen
+path = cppGen
+url = https://github.com/MartinHN/cppGen.git
 [submodule "genJSONSchema"]
-	path = genJSONSchema
-	url = ./genJSONSchema
+path = genJSONSchema
+url = https://github.com/MartinHN/genJSONSchema.git
