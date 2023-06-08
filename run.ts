@@ -7,7 +7,6 @@ if (process.argv.length <= 2) {
 }
 
 
-
 const confFilePath = process.argv[2]
 function toAbs(relP: string) {
     const confDir = path.dirname(confFilePath);
@@ -23,7 +22,9 @@ function mkDirIfNeeded(d: string) {
 
 const conf = JSON.parse(fs.readFileSync(confFilePath).toString())
 const outFolder = toAbs(conf.outFolder)
-const outJsFolder = toAbs(conf.outJsFolder)
+let outJsFolder
+if (conf.outJsFolder) outJsFolder = toAbs(conf.outJsFolder)
+const wasmOpts = conf.wasmOpts
 console.log(outFolder)
 mkDirIfNeeded(outFolder)
 if (outJsFolder)
@@ -46,4 +47,4 @@ if (conf.genJSON) {
 
 const cppOutFolder = outFolder + "/cpp";
 mkDirIfNeeded(cppOutFolder)
-genAll(jsonFile, cppOutFolder, outJsFolder)
+genAll(jsonFile, cppOutFolder, outJsFolder, wasmOpts)

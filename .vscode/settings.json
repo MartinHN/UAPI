@@ -75,7 +75,8 @@
         "random": "cpp",
         "regex": "cpp",
         "set": "cpp",
-        "filesystem": "cpp"
+        "filesystem": "cpp",
+        "bit": "cpp"
     },
     "terminal.integrated.defaultProfile.osx": "zsh",
     "html.format.enable": false,
