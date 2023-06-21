@@ -47,4 +47,4 @@ if (conf.genJSON) {
 
 const cppOutFolder = outFolder + "/cpp";
 mkDirIfNeeded(cppOutFolder)
-genAll(jsonFile, cppOutFolder, outJsFolder, wasmOpts)
+genAll(jsonFile, cppOutFolder, conf.opts, outJsFolder, wasmOpts)
